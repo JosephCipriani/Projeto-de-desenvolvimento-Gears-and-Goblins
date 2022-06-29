@@ -1,6 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Loop lógico do player
+//
 depth = (y * -1)+15;
+//cálculo de profundidade
 if(obj_logic.pause = false && !instance_exists(obj_code_gui)){
 	//checagem de pausa
 if(keyboard_check(ord("D"))){
