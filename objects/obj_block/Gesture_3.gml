@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Arrastando o bloco
+//
 if(mouse_x > x+90){
 	//xscale = (mouse_x-x)/50;
 }
