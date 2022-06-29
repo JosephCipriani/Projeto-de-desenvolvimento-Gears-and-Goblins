@@ -1,10 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Variáveis da GUI de código
+// 
+
 x = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2;
 y = (camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])/2);
+//posição inicial
+
 if(!audio_is_playing(snd_music)){
 	audio_play_sound(snd_music,0,true);
 }
+//música
 
 stop = false;
 
@@ -15,11 +19,13 @@ sep = 38;
 
 bob = 0;
 
+
 maxl = 9;
 total = 0;
 
 mov = 0;
 
+//partes da interface
 code = instance_create_depth(x,y,0,obj_code);
 code.xoff = -190;
 code.yoff = 10;
@@ -95,4 +101,5 @@ shoot.xoff = 95;
 shoot.yoff = 112;
 shoot.type = "shoot";
 
+//lista das partes
 pieces = [code,se,senaose,senao,ativ,dist,rel,horiz,vert,move,appr,flee,inter,att,shoot];
