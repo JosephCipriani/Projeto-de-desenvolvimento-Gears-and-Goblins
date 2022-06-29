@@ -1,9 +1,11 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Loop lógico do robô
+// 
 depth = y * -1;
+//cálculo da profundidade dinâmica
 if(!obj_logic.pause){
 
 if(!sleep && !awake){
+	//robô acorda
 	sprite_index = spr_robot_wakeup;
 	if(image_index > 23){
 		sprite_index = spr_robot_idle;
@@ -13,7 +15,7 @@ if(!sleep && !awake){
 	}
 }
 if(fall && awake){
-	
+	//robô para de funcionar
 	sprite_index = spr_robot_fall;
 	if(image_index > 23){
 		sprite_index = spr_robot_asleep;
@@ -25,7 +27,7 @@ if(fall && awake){
 
 if(!sleep && awake && !fall){
 	
-	
+	//cálculo de tempo do robô
 time+=1;
 if(time > timer){
 	fall = true;
@@ -34,7 +36,7 @@ if(time > timer){
 
 for(i = 0; i < array_length(commands); i++){
 	
-	
+		//percorre os comandos para realiza-los
 		if(structure[i] = "if"){
 			if(conditions[i] = true){
 			run();
@@ -53,15 +55,15 @@ function run(){
 		case "approach":
 		
 			mp_potential_step(target[i].x,target[i].y,spd,false);
-		
+			//anda na direção de X do alvo e y do alvo para [i] (comando)
 		break;
 		case "flee":
 		
 			mp_potential_step(target[i].x,target[i].y,-spd,false);
-		
+			//anda na direção contrária de X do alvo e y do alvo para [i]
 		break;
 		case "walk":
-		
+			//anda em determinada direção
 			switch(direct[i]){
 				case "left":
 				
@@ -79,7 +81,7 @@ function run(){
 		
 		break;
 		case "interact":
-		
+		//interage com objeto
 		
 		
 		break;
@@ -88,6 +90,7 @@ function run(){
 	
 for(i = 0; i < array_length(checks); i++){
 	switch(checks[i]){
+		//define qual o tipo de condição para realizar a ação (não acabado)
 		case "distance":
 		
 		if(comparator[i] = ">"){
@@ -109,6 +112,7 @@ for(i = 0; i < array_length(checks); i++){
 		case "obj_is":
 		
 			switch(relation[i]){
+					//relação de posição do objeto comparado ao robô (não acabado)
 				case "above":
 				if(y > object[i].y){
 					conditions[i] = true;
@@ -130,19 +134,20 @@ for(i = 0; i < array_length(checks); i++){
 		break;
 		
 		case "vertical":
-		
+		//distância vertical
 		break;
 		case "horizon":
-		
+		//distância horizontal
 		break;
 	}
 }
 }else{
 	
 	if(distance_to_object(obj_goblin) < 20 && !obj_logic.pause && keyboard_check_released(vk_space) && sleep && !instance_exists(obj_code_gui)){
+		//checagem de interação do player com o robô
 		image_index = 0;
 		instance_create_depth(x,y,0,obj_code_gui);
-		//sleep = false;
+		//cria-se uma instância de GUI do código
 	}
 }
 }
