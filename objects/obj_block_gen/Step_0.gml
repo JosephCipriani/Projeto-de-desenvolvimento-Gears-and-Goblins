@@ -1,10 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Loop lógico do gerador de blocos
+//
+
+//escala
 image_xscale = (xscale+1+xscale)/3.2;
 image_yscale = (yscale+0.75)/3.2;
 
+//posição de texto
 middle = y+5+(20*yscale)/2;
 
+//tipos de condicional
 switch(type){
 	case "se":
 	text[0] = "Se:";
@@ -26,6 +30,7 @@ switch(type){
 }
 
 if(!created){
+	//cria um bloco (pela primeira vez)
 box = instance_create_depth(x,y,depth,obj_block);
 box.image_alpha = 0;
 		box.subtype = type;
@@ -33,6 +38,7 @@ box.image_alpha = 0;
 created = true;
 }else{
 	if(distance_to_object(instance_nearest(x,y,obj_block)) > 1){
+		//cria um bloco após o jogador retirar um bloco
 		box = instance_create_depth(x,y,depth-10,obj_block);
 		box.image_alpha = 0;
 		box.subtype = type;
