@@ -1,11 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Largando o bloco
+//
+
 if(!obj_logic.pause){
 if(incode){
-	//array_push(obj_code.ifs,self);
+	
 	array_insert(obj_code.ifs,index,self);
+	//Insere a si mesmo no array de condicionais da caixa de código (na posição "index")
+	
 	depth = -5010;
-	//instance_destroy(self)
+	//altera a profundidade
 }else{
 	die = true;
 }
