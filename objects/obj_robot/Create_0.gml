@@ -1,6 +1,26 @@
 /// @Variáveis do robô
 //
 
+guncool = false;
+bullet = undefined;
+//valores de tiro
+
+booleans = [true,true];
+//array das condições
+
+maxlife = 80;
+life = maxlife;
+//energia
+
+barWidth = 1;
+//largura da barra de energia
+
+baralpha = 0;
+//opacidade da barra de energia
+
+cooldown = false;
+//cooldown de ataques
+
 collide = true;
 //colisão
 
@@ -16,6 +36,7 @@ function run(){
 reset = false;
 awake = false;
 sleep = true;
+fall = false;
 
 i = 0;
 
@@ -36,6 +57,26 @@ pos = [0,0,0];
 conditions = [undefined,undefined,false];
 relation = ["","above",""];
 direct = ["","up","up"];
+
+act = [];
+cond = [];
+
+comp = [];
+integ = [];
+obj = [0,0,0,0,0,0,0,0,0];
+comparator = [];
+integer = [];
+tar = [];
+target = [];
+
+ifs = [];
+object = [];
+ident = [];
+array = 0;
+
+comm = undefined;
+conditionals = undefined;
+activities = undefined;
 
 
 
